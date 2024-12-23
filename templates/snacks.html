@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/snacks.css') }}">
+    <title>وجبات السينما</title>
+    <style>
+        /* Internal CSS for layout adjustments */
+        .actions {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>cinema snackes</h1>
+    <div class="container">
+        <div class="snacks">
+            <!-- Popcorn Items -->
+            <div class="popcorn">
+                <h2>Popcorn</h2>
+                <p>Small - 20$</p>
+                <button onclick="order('small popcorn')">Order</button>
+            </div>
+            <!-- Pepsi Items -->
+            <div class="pepsi">
+                <h2>Pepsi</h2>
+                <p>Small - 20$</p>
+                <button onclick="order('small pepsi')">Order</button>
+            </div>
+
+             <!-- Chocolate Items -->
+             <div class="chocolata">
+                <h2>Chocolate</h2>
+                <p>Small - 20$</p>
+                <button onclick="order('small chocolata')">Order</button>
+            </div>
+
+            <div class="popcorn">
+                <h2>Popcorn</h2>
+                <p>Large - 40$</p>
+                <button onclick="order('large popcorn')">Order</button>
+            </div>
+            
+            <div class="pepsi">
+                <h2>Pepsi</h2>
+                <p>Large - 40$</p>
+                <button onclick="order('large pepsi')">Order</button>
+            </div>
+
+            <div class="chocolata">
+                <h2>Chocolate</h2>
+                <p>Large - 40$</p>
+                <button onclick="order('large chocolata')">Order</button>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button onclick="showMessage()">Message</button>
+            <button onclick="goToPayment()">Payment</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/snacks.js') }}"></script>
+</body>
+</html>

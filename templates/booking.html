@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}"> 
+  <title>Movie Seat Booking</title>
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="/payment" id="payment_li">payment</a></li>
+            <li><a href="/booking">Booking</a></li>
+            <li><a href="/movies">Movies</a></li>
+            <li><a href="/login" id="login_li">Login</a></li>
+            <li><a href="{{ url_for('logout') }}" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <ul class="showcase">
+    <li>
+      <div class="seat"></div>
+      <small>Available</small>
+    </li>
+    <li>
+      <div class="seat selected"></div>
+      <small>Selected</small>
+    </li>
+    <li>
+      <div class="seat sold"></div>
+      <small>Sold</small>
+    </li>
+  </ul>
+
+  <div class="container">
+    <div class="screen"></div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+  </div>
+
+  <div class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Choose an Option ^_^</h2>
+      <button class="snacks-option">Select Snacks</button>
+      <button class="payment-option">Proceed to Payment</button>
+    </div>
+  </div>
+  
+
+  <p class="text">
+    You have selected <span id="count">0 
+  </p>
+  <button class="checkout-button disabled">Process to checkout</button>
+  <!-- <button id="make-available-btn">Make Seat Available</button> -->
+  <button id="reset-btn" onclick="makeAllSeatsAvailable()">Reset All Seats</button>
+
+  <script src="{{ url_for('static', filename='js/booking.js') }}"></script>
+
+</body>
+</html>

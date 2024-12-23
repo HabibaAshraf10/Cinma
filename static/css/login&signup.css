@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif; /* Modern font */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../login&signup.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(5px); /* Adds a frosted glass effect */
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #fff;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Vertically align checkbox with the text */
+    justify-content: center; /* Align items to the left */
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 0.9em;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+#rememberLabel {
+    font-size: 15px;
+    font-weight: bolder;
+    
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 1em;
+}
+
+input::placeholder {
+  color: #aaaaaa; /* Higher contrast placeholder */
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #838282;
+}
+
+#rememberCheckbox {
+    width: 13px;
+    cursor: pointer;
+    accent-color: #0099ff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #0066ff, #0099ff);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0052cc, #007acc);
+    transform: translateY(-2px);
+}
+
+p {
+    font-size: 0.9em;
+    color: #fff;
+    text-align: center;
+}
+
+a {
+    color: #00ccff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#signupLink {
+    font-weight: bolder;
+}
+
+#loginLink {
+    font-weight: bolder;
+}
+
+#alreadyHaveAccount {
+    margin-top: 0;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff6666;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+@media screen and (max-width: 450px){
+    .form-container {
+        padding: 20px;
+    }
+
+    input {
+        width: 90%;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+}

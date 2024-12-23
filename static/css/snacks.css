@@ -1,0 +1,87 @@
+body {
+    background-image: url('snacks.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    flex-direction: column;
+    margin-left: 2cm; /* تحريك النص بمقدار 2 سنتيمتر إلى اليمين */
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    }
+.snacks {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pepsi{
+    background-image: url('pepsi.jpg'); /* استبدل بالمسار الصحيح */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(245, 236, 236);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    transition: transform 0.2s;
+    font-size: larger;
+
+}
+
+.popcorn{ 
+    background-image: url('popcorn.jpg'); /* استبدل بالمسار الصحيح */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(245, 236, 236);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    transition: transform 0.2s;
+    font-size: larger;
+}
+
+.chocolata{
+    background-image: url('chocolata.jpg'); /* استبدل بالمسار الصحيح */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(245, 236, 236);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    transition: transform 0.2s;
+    font-size: larger;
+
+}
+
+
+
+.snack:hover {
+    transform: scale(1.05);
+}
+button {
+    padding: 10px 20px;
+    background-color: rgb(36, 4, 109);
+    color:#fff;
+    border: solid rgb(7, 7, 7);
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #c00;
+}
+h1{
+    color:#fff;
+}
+

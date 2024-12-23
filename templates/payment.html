@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/payment.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/payment">Payment</a></li>
+                <li><a href="/booking">Booking</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/login" id="login_li">Login</a></li>
+                <li><a href="{{ url_for('logout') }}" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <main>
+        <h1>Payment Process</h1>
+       
+        <form  method="POST" action="/payment" id="payment-form">
+            <div class="form-group">
+                <label for="movie">Movie</label>
+                <select id="movie" name="movie_id" required onchange="calculateTotalPrice()">
+                    <option value="">Select Movie</option> <!-- Empty option for resetting -->
+                    {% for movie in movies %}
+                        <option value="{{ movie.id }}" data-price="{{ movie.price }}" data-show-time="{{ movie.time }}" data-hall-number="{{ movie.hall_number }}">
+                            {{ movie.title }} - {{ movie.time }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+ 
+            <div class="form-group">
+                <label for="seats">Seats</label>
+                <input class="numSeats" type="number" id="seats" name="seats" min="1" value="1" required onchange="calculateTotalPrice()">
+            </div>
+ 
+            <div class="form-group">
+                <label for="total_price">Seats Price</label>
+                <input type="text" id="total_price" name="total_price" readonly>
+            </div>
+ 
+            <!-- <h2>Info Payment</h2> -->
+            <div class="form-group">
+                <label for="name_on_card">Name on Card</label>
+                <input type="text" id="name_on_card" name="name_on_card" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" name="card_number" maxlength="16" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="expiration_date">Expiration Date</label>
+                <input type="month" id="expiration_date" name="expiration_date" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="cvv">Code CVV</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" required>
+            </div>
+ 
+           
+ 
+            <div class="form-group">
+                <label for="discount_code">Discount Code (if you have)</label>
+                <input type="text" id="discount_code" name="discount_code">
+            </div>
+            <div class="form-group">
+                <label for="currency">Choose Currency</label>
+                <select id="currency" name="currency" required onchange="calculateTotalPrice()">
+                    <option value="">Select Currency</option> <!-- Empty option -->
+                    <option value="EGY">EGY</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="SAR">SAR</option>
+                </select>
+            </div>
+ 
+            <div class="payment-options">
+                <h2>Choose Payment Way</h2>
+                <label for="credit_card">
+                    <input type="radio" name="payment_method" value="Master_card" id="Master_card" required> Master Card
+                </label>
+                <label for="paypal">
+                    <input type="radio" name="payment_method" value="Visa" id="Visa"> Visa
+                </label>
+            </div>
+           
+            <button type="submit">Submit Payment</button>
+        </form>
+    </main>
+ 
+    <script src="{{ url_for('static', filename='js/payment.js') }}"></script>
+</body>
+</html>

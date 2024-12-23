@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Description</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Descriaption.css') }}">
+    <title>مثال على WebKit Background Clip</title>
+</head>
+<body>
+    <div class="movie-container">
+        <div class="movie-header">
+            <h1>{{ movie.title }} ({{ movie.year }})</h1>
+            <div class="movie-rating">
+                Rating: 
+                <span id="stars-container">
+                    {% set full_stars = movie.rating | int %}
+                    {% set empty_stars = 5 - full_stars %}
+                    {% for i in range(full_stars) %}
+                        <span class="star full">★</span>
+                    {% endfor %}
+                    {% for i in range(empty_stars) %}
+                        <span class="star empty">☆</span>
+                    {% endfor %}
+                </span>
+                (<span id="rating-number">{{ movie.rating }}</span> / 10)
+            </div>
+        </div>
+        <div class="movie-details">
+            <div class="movie-image">
+                <img src="{{ url_for('static', filename=movie.image) }}" alt="{{ movie.title }}">
+            </div>
+            <div class="movie-description">
+                <h2>Description:</h2>
+                <p>{{ movie.description }}</p>
+                <p><strong>Show Time:</strong> {{ movie.show_time }}</p>
+                <p><strong>Actors:</strong> {{ movie.actors | join(", ") }}</p>
+            </div>
+        </div>
+
+        <!-- استطلاع رأي المشاهدين -->
+        <div class="poll-section">
+            <h3>How do you rate the main actor?</h3>
+            <form id="poll-form">
+                <label><input type="radio" name="poll" value="excellent"> Excellent</label>
+                <label><input type="radio" name="poll" value="good"> Good</label>
+                <label><input type="radio" name="poll" value="average"> Average</label>
+                <label><input type="radio" name="poll" value="poor"> Poor</label>
+                <button type="button" onclick="submitPoll()">Vote</button>
+            </form>
+        </div>
+
+        <!-- طاقم العمل -->
+        <div class="actors-info">
+            <h3>Actors Info</h3>
+            <ul>
+                {% for actor in movie.actors %}
+                <li>
+                    {{ actor }}
+                    <a href="https://www.imdb.com/find?q={{ actor }}" target="_blank">IMDB</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- خريطة الموقع -->
+        <div class="location-section">
+            <h3>أقرب دور عرض</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.83532557888!2d-122.08424968469108!3d37.422065779820734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e9aa4d9b67%3A0xa7a6b3b31aeb20!2sGoogleplex!5e0!3m2!1sen!2sus!4v1614525542175!5m2!1sen!2sus" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- أزرار التنقل -->
+        <div class="action-buttons">
+            <a href="/" class="btn btn-home">Go Back to Home</a>
+            <a href="/booking" class="btn btn-book">Book Now</a>
+        </div>
+    </div>
+
+    <!-- ملف الجافاسكربت -->
+    <script>
+        function submitPoll() {
+            const form = document.getElementById('poll-form');
+            const selected = form.poll.value;
+
+            let ratingValue = 0;
+
+            switch (selected) {
+                case 'excellent':
+                    ratingValue = 5;
+                    break;
+                case 'good':
+                    ratingValue = 3;
+                    break;
+                case 'average':
+                    ratingValue = 2.5;
+                    break;
+                case 'poor': }}

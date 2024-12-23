@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Genres</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/movies.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="left-items">
+                    <li><a href="/payment">Payment</a></li>
+                    <li><a href="/booking">Booking</a></li>
+                    <li><a href="/movies">Movies</a></li>  <!-- هذا الرابط -->
+                    <li><a href="/login" id="login_li">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}" id="logout">Logout</a></li>
+                </div>
+                <li class="greeting" style=" color: white; padding: 10px;">
+                    Welcome {{ username if username else 'as a Guest' }}
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div>
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <h1>Movie Genres</h1>
+
+    <div class="genre-cards">
+        <div class="genre-card">
+            <img src="{{ url_for('static', filename='comedy.png') }}" alt="Comedy" class="genre-image">
+            <h3>Comedy</h3>
+            <a href="#" class="btn" data-genre="comedy">View Movies</a>
+        </div>
+
+        <div class="genre-card">
+            <img src="{{ url_for('static', filename='action.png') }}" alt="Action" class="genre-image">
+            <h3>Action</h3>
+            <a href="#" class="btn" data-genre="action">View Movies</a>
+        </div>
+
+        <div class="genre-card">
+            <img src="{{ url_for('static', filename='cartoon.png') }}" alt="Cartoon" class="genre-image">
+            <h3>Cartoon</h3>
+            <a href="#" class="btn" data-genre="cartoon">View Movies</a>
+        </div>
+
+        <div class="genre-card">
+            <img src="{{ url_for('static', filename='romance.png') }}" alt="Romance" class="genre-image">
+            <h3>Romance</h3>
+            <a href="#" class="btn" data-genre="romance">View Movies</a>
+        </div>
+    </div>
+
+    <h2 id="genre-title" style="display: none;">Movies</h2>
+    <ul id="movie-list" class="movie-list"></ul>
+
+    <script src="{{ url_for('static', filename='js/movies.js') }}"></script>
+</body>
+</html>

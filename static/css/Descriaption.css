@@ -1,0 +1,106 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a2a5a 25%, #3d6fa6 50%, #0a2a5a 75%);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.movie-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: none;
+    background-color:#3d6fa6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.movie-header h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.movie-rating {
+    font-size: 1.5rem;
+    color: #ff9900;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 1.8rem;
+    color: #ffcc00;
+}
+
+.star.empty {
+    color: #ccc;  /* Empty stars will be grey */
+}
+
+.movie-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie-image img {
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.movie-description {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.movie-description h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.movie-description p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.movie-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.booking-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.booking-button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #0056b3;
+}

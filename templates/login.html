@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/login&signup.css">
+
+</head>
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div>
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    <div class="container">
+        <div class="form-container">
+            <form id="loginForm" action="/login" method="POST">
+                <h2>Login</h2>
+
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" placeholder="Enter your Email" required>
+                <span class="error-message"></span> <!-- This will hold the error message -->
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" placeholder="Not less than 6 digits" required>
+                <span class="error-message"></span> <!-- This will hold the error message -->
+
+                <button type="submit" id="loginButton">Login</button>
+
+                <div class="checkbox-container">
+                    <label for="rememberCheckbox" id="rememberLabel">Remember me for a week</label>
+                    <input type="checkbox" name="rememberMe" id="rememberCheckbox">
+                </div>
+
+                <p>Don't have an account? <a href="{{ url_for('signup') }}" id="signupLink">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+    <script src="{{ url_for('static', filename='js/login&signup.js') }}"></script>
+</body>
+</html>

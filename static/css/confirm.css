@@ -1,0 +1,90 @@
+body {
+    background-image: url('conf.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    flex-direction: column;
+    margin-left: 2cm; /* تحريك النص بمقدار 2 سنتيمتر إلى اليمين */
+}
+
+.container {
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: left; /* محاذاة النصوص إلى اليسار */
+    position: absolute;
+    bottom: 0cm; /* زيادة المسافة بين الحاوية وأسفل الصفحة */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* محاذاة المحتوى إلى الأعلى */
+    height: 80%; /* جعل الحاوية تأخذ مساحة أكبر ليكون هناك مساحة فارغة في الأعلى */
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* مسافة بين العنوان والعناصر التالية */
+    font-size: 24px;
+}
+
+.form-group {
+    margin: 5px 0; /* مسافة بين الحقول */
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* مسافة بين الأزرار والعناصر الأخرى */
+}
+
+.btn {
+    width: 250px;
+    padding: 12px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* تغيير اللون الأزرق لزر Confirm */
+.btn-confirm {
+    background-color: #1e88e5; /* الأزرق */
+}
+
+.btn-confirm:hover {
+    background-color: #1568b0; /* تفاعل عند التمرير على الزر */
+    transform: scale(1.05); /* تكبير الزر عند التمرير */
+}
+
+.btn-home {
+    background-color: #2068cd;
+}
+
+.btn-home:hover {
+    background-color: #185a9d;
+    transform: scale(1.05);
+}
+
+.btn-book {
+    background-color: #1e88e5;
+}
+
+.btn-book:hover {
+    background-color: #1568b0;
+    transform: scale(1.05);
+}

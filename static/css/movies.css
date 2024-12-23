@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a2a5a 25%, #3d6fa6 50%, #0a2a5a 75%);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* تنسيق العنوان */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* تنسيق الهيدر */
+header {
+    padding: 10px 10px 0 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* شفافية خفيفة */
+    text-align: center;
+}
+
+header nav ul .left-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+header nav ul .greeting {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* margin-left: auto; */
+    /* float: right; */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #3d6fa6;
+}
+#logout:hover {
+    color: red;
+}
+
+/* تنسيق بطاقات الأنواع */
+.genre-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.genre-card {
+    background-color: rgba(255, 255, 255, 0.2); /* خلفية شفافة */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 250px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.genre-card:hover {
+    transform: scale(1.05); /* تكبير البطاقة عند المرور عليها */
+}
+
+.genre-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.genre-card h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+/* تنسيق زر View More */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3d6fa6;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0a2a5a;
+}
+
+/* تنسيق قائمة الأفلام */
+.movie-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.movie-card {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.movie-card:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.movie-card img {
+    width: 80px;
+    height: 120px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.movie-info {
+    color: #fff;
+}
+
+.movie-info strong {
+    font-size: 1.1rem;
+}
+
+.movie-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.movie-card + .movie-card {
+    margin-top: 10px; /* إضافة مسافة بين كل فيلم وآخر */
+}
+
+/* تنسيق زر Description */
+.btn-description {
+    padding: 5px 10px;
+    background-color: #ffa500;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-description:hover {
+    background-color: #ff751a;
+}
